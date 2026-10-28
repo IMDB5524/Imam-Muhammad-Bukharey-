@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--
+╔══════════════════════════════════════════════════════════════════════╗
+║  STUDENT INFORMATION — EDIT THIS SECTION                              ║
+╠══════════════════════════════════════════════════════════════════════╣
+║  This whole website lives in this one file. To customize it:          ║
+║                                                                       ║
+║  1. Search this file (Ctrl+F / Cmd+F) for:   EDIT:                    ║
+║     Every place you should change is marked with an "EDIT:" comment.  ║
+║                                                                       ║
+║  2. Search for square brackets  [  ]                                  ║
+║     Anything inside [brackets] is placeholder text. Replace it with   ║
+║     your real information, or delete the item.                        ║
+║                                                                       ║
+║  3. TO HIDE A WHOLE SECTION: add the word  hidden  to its <section>   ║
+║     tag, e.g.  <section id="research" class="section" hidden>         ║
+║     The menu link for that section disappears automatically.          ║
+║     To show it again, delete the word  hidden.                        ║
+║                                                                       ║
+║  4. SOCIAL LINKS: leave a link's href empty  href=""  and the icon    ║
+║     will not be shown. Paste your URL in to make it appear.           ║
+║                                                                       ║
+║  5. FILES (optional — the site still looks right without them):       ║
+║       assets/profile.jpg     your photo (square or portrait)          ║
+║       assets/project-1.jpg   project screenshot                       ║
+║       assets/project-2.jpg   project screenshot                       ║
+║       assets/resume.pdf      your resume                              ║
+║                                                                       ║
+║  Quick reference — your details used in this file:                    ║
+║    Name ........ Imam Muhammad Bukharey                               ║
+║    Program ..... BBA, Business Statistics — Pacific States University ║
+║    Email ....... imambukharey01@gmail.com                             ║
+║    Location .... Inglewood, CA                                        ║
+║                  (Your full street address is intentionally NOT shown ║
+║                   publicly. City and state are enough for recruiters.)║
+║    GitHub ...... https://github.com/IMDB5524                          ║
+║    Facebook .... https://www.facebook.com/imam.bukhary007             ║
+║    LinkedIn .... [add your LinkedIn URL — search for "EDIT: LinkedIn"]║
+╚══════════════════════════════════════════════════════════════════════╝
+-->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- EDIT: Page title and search-engine description -->
+  <title>Imam Muhammad Bukharey | Business Statistics, Pacific States University</title>
+  <meta name="description" content="Personal portfolio of Imam Muhammad Bukharey, BBA Business Statistics student at Pacific States University in Los Angeles. Projects, experience, skills, and contact information.">
+  <meta name="author" content="Imam Muhammad Bukharey">
+
+  <!-- EDIT: Replace with your real GitHub Pages address once it is live -->
+  <link rel="canonical" href="https://imdb5524.github.io/">
+
+  <!-- Open Graph (how the link looks when shared on LinkedIn, Facebook, etc.) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Imam Muhammad Bukharey | Business Statistics Student">
+  <meta property="og:description" content="BBA Business Statistics student at Pacific States University. Portfolio, projects, and contact.">
+  <meta property="og:url" content="https://imdb5524.github.io/">
+  <meta property="og:image" content="assets/profile.jpg">
+
+  <!-- Twitter / X card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Imam Muhammad Bukharey | Business Statistics Student">
+  <meta name="twitter:description" content="BBA Business Statistics student at Pacific States University. Portfolio, projects, and contact.">
+
+  <meta name="theme-color" content="#1F4E8C">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2313294B'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' fill='%23D8AE5E' text-anchor='middle'%3EIB%3C/text%3E%3C/svg%3E">
+
+  <!-- Fonts (lightweight, with system fallbacks if they fail to load) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Set theme before the page draws, to avoid a flash of the wrong colors -->
+  <script>
+    (function () {
+      var root = document.documentElement;
+      root.classList.add('js');
+      try {
+        var saved = localStorage.getItem('theme');
+        if (saved === 'light' || saved === 'dark') {
+          root.setAttribute('data-theme', saved);
+        } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          root.setAttribute('data-theme', 'dark');
+        } else {
+          root.setAttribute('data-theme', 'light');
+        }
+      } catch (e) { /* storage blocked: CSS media query handles it */ }
+    })();
+  </script>
+
+<!-- ═════════════════════════════════════════════════════════════════════
+     PART 1 — CSS (styles)
+     ═════════════════════════════════════════════════════════════════════ -->
+  <style>
+    /* ---------- Color tokens: light theme ---------- */
+    :root {
+      --bg: #F6F8FB;
+      --surface: #FFFFFF;
+      --surface-2: #EEF2F7;
+      --ink: #13223A;
+      --muted: #4A5A70;
+      --line: #D9E1EB;
+      --accent: #1F4E8C;       /* deep academic blue */
+      --accent-ink: #FFFFFF;
+      --gold: #A9781E;         /* decorative accent */
+      --shadow: 0 1px 2px rgba(19, 34, 58, .06), 0 8px 24px rgba(19, 34, 58, .06);
+      --radius-sm: 6px;
+      --radius: 10px;
+      --serif: "Newsreader", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+      --sans: "Public Sans", "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+      --header-h: 64px;
+      color-scheme: light;
+    }
+
+    /* ---------- Dark theme ---------- */
+    :root[data-theme="dark"] {
+      --bg: #0E1624;
+      --surface: #152034;
+      --surface-2: #1B2840;
+      --ink: #E6EBF3;
+      --muted: #A9B5C7;
+      --line: #273650;
+      --accent: #8DB6F0;
+      --accent-ink: #0E1624;
+      --gold: #D8AE5E;
+      --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .25);
+      color-scheme: dark;
+    }
+    /* Dark mode when JavaScript is off and the device prefers dark */
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme]) {
+        --bg: #0E1624; --surface: #152034; --surface-2: #1B2840;
+        --ink: #E6EBF3; --muted: #A9B5C7; --line: #273650;
+        --accent: #8DB6F0; --accent-ink: #0E1624; --gold: #D8AE5E;
+        color-scheme: dark;
+      }
+    }
+
+    /* ---------- Base ---------- */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 16px); }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 1.0625rem;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      transition: background-color .25s ease, color .25s ease;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: var(--accent); text-underline-offset: 3px; }
+    a:hover { text-decoration-thickness: 2px; }
+    h1, h2, h3 { font-family: var(--serif); font-weight: 500; line-height: 1.2; margin: 0; }
+    p { margin: 0 0 1em; }
+    ul { padding-left: 1.2em; }
+    [hidden] { display: none !important; }
+
+    :focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    .skip-link {
+      position: absolute; left: 16px; top: -60px; z-index: 100;
+      background: var(--accent); color: var(--accent-ink);
+      padding: 10px 16px; border-radius: var(--radius-sm); text-decoration: none;
+    }
+    .skip-link:focus { top: 12px; }
+
+    .container { width: min(1120px, 100% - 40px); margin-inline: auto; }
+
+    .icon {
+      width: 1.1em; height: 1.1em; flex: none;
+      fill: none; stroke: currentColor; stroke-width: 1.8;
+      stroke-linecap: round; stroke-linejoin: round;
+      vertical-align: -0.15em;
+    }
+
+    /* ---------- Header / navigation ---------- */
+    .site-header {
+      position: sticky; top: 0; z-index: 50;
+      background: color-mix(in srgb, var(--bg) 88%, transparent);
+      backdrop-filter: saturate(140%) blur(10px);
+      -webkit-backdrop-filter: saturate(140%) blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    .header-inner {
+      display: flex; align-items: center; gap: 16px;
+      min-height: var(--header-h);
+    }
+    .brand {
+      display: flex; flex-direction: column; text-decoration: none; color: var(--ink);
+      line-height: 1.15; margin-right: auto;
+    }
+    .brand-name { font-family: var(--serif); font-size: 1.2rem; font-weight: 600; }
+    .brand-note { font-size: .75rem; color: var(--muted); }
+
+    .nav-links {
+      display: flex; flex-wrap: wrap; gap: 2px; list-style: none; margin: 0; padding: 0;
+    }
+    .nav-links a {
+      display: block; padding: 8px 10px; border-radius: var(--radius-sm);
+      color: var(--muted); text-decoration: none; font-size: .92rem; font-weight: 500;
+    }
+    .nav-links a:hover { color: var(--ink); background: var(--surface-2); }
+    .nav-links a[aria-current="true"] { color: var(--accent); }
+
+    .icon-btn {
+      display: inline-grid; place-items: center;
+      width: 40px; height: 40px; border-radius: var(--radius-sm);
+      border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+      cursor: pointer;
+    }
+    .icon-btn:hover { border-color: var(--accent); }
+    .icon-btn .icon { width: 20px; height: 20px; }
+    .theme-toggle .moon { display: none; }
+    :root[data-theme="dark"] .theme-toggle .sun { display: none; }
+    :root[data-theme="dark"] .theme-toggle .moon { display: block; }
+    .menu-toggle { display: none; }
+    html:not(.js) .theme-toggle { display: none; }
+
+    /* Collapse menu into a hamburger on smaller screens (JS only) */
+    @media (max-width: 1080px) {
+      .js .menu-toggle { display: inline-grid; }
+      .js .site-nav {
+        position: absolute; left: 0; right: 0; top: 100%;
+        background: var(--bg); border-bottom: 1px solid var(--line);
+        box-shadow: var(--shadow);
+        display: none;
+      }
+      .js .site-nav.open { display: block; }
+      .js .nav-links {
+        flex-direction: column; padding: 8px 20px 16px;
+        width: min(1120px, 100%); margin-inline: auto;
+      }
+      .js .nav-links a { padding: 12px 10px; font-size: 1rem; }
+      /* Without JS the links simply wrap under the name */
+      html:not(.js) .header-inner { flex-wrap: wrap; padding-block: 10px; }
+    }
+
+    /* ---------- Hero ---------- */
+    .hero { padding: clamp(48px, 8vw, 104px) 0 clamp(48px, 7vw, 88px); }
+    .hero-grid {
+      display: grid; grid-template-columns: 1.35fr .9fr; gap: clamp(32px, 6vw, 80px);
+      align-items: center;
+    }
+    .hero-kicker { color: var(--muted); font-size: 1.05rem; margin-bottom: 12px; }
+    .hero h1 {
+      font-size: clamp(2.6rem, 6.4vw, 4.6rem);
+      font-weight: 500;
+      letter-spacing: -0.015em;
+      line-height: 1.04;
+      margin-bottom: 20px;
+    }
+    .hero-headline {
+      font-family: var(--serif); font-size: clamp(1.2rem, 2.2vw, 1.45rem);
+      color: var(--ink); margin-bottom: 16px; max-width: 34ch;
+    }
+    .hero-intro { color: var(--muted); max-width: 58ch; }
+    .hero-meta {
+      display: flex; flex-wrap: wrap; gap: 8px 22px; list-style: none; padding: 0;
+      margin: 20px 0 28px; color: var(--muted); font-size: .95rem;
+    }
+    .hero-meta li { display: flex; align-items: center; gap: 8px; }
+    .hero-meta a { color: inherit; }
+    .hero-meta a:hover { color: var(--accent); }
+
+    .btn-row { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 20px; border-radius: var(--radius-sm);
+      font: 600 .95rem/1 var(--sans); text-decoration: none; cursor: pointer;
+      border: 1.5px solid var(--accent); transition: background-color .2s, color .2s, border-color .2s;
+    }
+    .btn-primary { background: var(--accent); color: var(--accent-ink); }
+    .btn-primary:hover { background: color-mix(in srgb, var(--accent) 85%, var(--ink)); }
+    .btn-secondary { background: transparent; color: var(--accent); }
+    .btn-secondary:hover { background: var(--surface-2); }
+
+    /* Profile photo with a fallback monogram underneath */
+    .portrait {
+      position: relative; width: min(100%, 360px); justify-self: end;
+    }
+    .portrait::before {           /* offset gold frame */
+      content: ""; position: absolute; inset: 16px -16px -16px 16px;
+      border: 1.5px solid var(--gold); border-radius: var(--radius);
+    }
+    .portrait-frame {
+      position: relative; aspect-ratio: 4 / 5; border-radius: var(--radius);
+      overflow: hidden; background: var(--surface-2); box-shadow: var(--shadow);
+    }
+    .portrait-fallback {
+      position: absolute; inset: 0; display: grid; place-items: center;
+      font-family: var(--serif); font-size: clamp(4rem, 10vw, 6rem); color: var(--accent);
+      background:
+        radial-gradient(circle at 30% 20%, color-mix(in srgb, var(--accent) 12%, transparent), transparent 60%),
+        var(--surface-2);
+    }
+    .portrait-frame img {
+      position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+    }
+
+    /* One page-load moment: the hero settles in. Nothing else animates on its own. */
+    @media (prefers-reduced-motion: no-preference) {
+      .js .hero-text > * { animation: rise .7s cubic-bezier(.2,.7,.2,1) both; }
+      .js .hero-text > *:nth-child(2) { animation-delay: .06s; }
+      .js .hero-text > *:nth-child(3) { animation-delay: .12s; }
+      .js .hero-text > *:nth-child(4) { animation-delay: .18s; }
+      .js .hero-text > *:nth-child(n+5) { animation-delay: .24s; }
+      .js .portrait { animation: fade 1s .15s ease both; }
+      @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+      @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+    }
+
+    /* ---------- Sections: CV-style two-column layout ---------- */
+    .section { padding: clamp(56px, 7vw, 88px) 0; border-top: 1px solid var(--line); }
+    .section-grid { display: grid; grid-template-columns: 220px 1fr; gap: 24px 56px; }
+    .section-head h2 {
+      font-size: clamp(1.75rem, 3vw, 2.2rem);
+      position: sticky; top: calc(var(--header-h) + 24px);
+    }
+    .section-head p { color: var(--muted); font-size: .95rem; margin-top: 10px; position: sticky; top: calc(var(--header-h) + 72px); }
+    .section-body { min-width: 0; }
+    .section-body > * + * { margin-top: 0; }
+    .lead { font-size: 1.15rem; max-width: 65ch; }
+    .prose { max-width: 68ch; }
+    .muted { color: var(--muted); }
+    h3 { font-size: 1.3rem; }
+
+    .about-facts {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 28px 40px; margin-top: 32px;
+    }
+    .about-facts h3 {
+      font-family: var(--sans); font-size: .95rem; font-weight: 600; color: var(--accent);
+      margin-bottom: 6px;
+    }
+    .about-facts p { color: var(--muted); margin: 0; }
+
+    /* ---------- Timeline (education, experience) ---------- */
+    .timeline { list-style: none; margin: 0; padding: 0; position: relative; }
+    .timeline::before {
+      content: ""; position: absolute; left: 5px; top: 10px; bottom: 10px;
+      width: 2px; background: var(--line);
+    }
+    .timeline > li { position: relative; padding-left: 36px; }
+    .timeline > li + li { margin-top: 40px; }
+    .timeline > li::before {
+      content: ""; position: absolute; left: 0; top: 8px;
+      width: 12px; height: 12px; border-radius: 50%;
+      background: var(--bg); border: 2px solid var(--accent);
+    }
+    .entry-top {
+      display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px;
+      align-items: baseline;
+    }
+    .entry-date { color: var(--muted); font-size: .92rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .entry-org { color: var(--accent); font-weight: 500; margin: 4px 0 10px; }
+    .entry-org span { color: var(--muted); font-weight: 400; }
+    .entry ul { margin: 8px 0 0; }
+    .entry li + li { margin-top: 4px; }
+    .entry-subhead { font-weight: 600; font-size: .95rem; margin: 14px 0 0; }
+
+    details.coursework {
+      margin-top: 14px; border: 1px solid var(--line); border-radius: var(--radius-sm);
+      background: var(--surface);
+    }
+    details.coursework summary {
+      cursor: pointer; padding: 10px 14px; font-weight: 500; font-size: .95rem;
+      list-style-position: inside;
+    }
+    details.coursework[open] summary { border-bottom: 1px solid var(--line); }
+    details.coursework .badges { padding: 14px; }
+
+    /* ---------- Badges (skills, technologies) ---------- */
+    .badges { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 0; padding: 0; }
+    .badges li {
+      padding: 5px 12px; border-radius: 999px; font-size: .88rem;
+      background: var(--surface-2); color: var(--ink); border: 1px solid var(--line);
+    }
+    .skill-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 32px 40px; }
+    .skill-group h3 { font-family: var(--sans); font-size: 1rem; font-weight: 600; margin-bottom: 12px; }
+    .skill-cat + .skill-cat { margin-top: 16px; }
+    .skill-cat-name { font-size: .88rem; color: var(--muted); margin-bottom: 8px; }
+
+    /* ---------- Project cards ---------- */
+    .projects { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
+    .card {
+      background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+      overflow: hidden; display: flex; flex-direction: column;
+      transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+    }
+    .card:hover { border-color: color-mix(in srgb, var(--accent) 55%, var(--line)); box-shadow: var(--shadow); }
+    @media (prefers-reduced-motion: no-preference) { .card:hover { transform: translateY(-2px); } }
+    .card-media { position: relative; aspect-ratio: 16 / 9; background: var(--surface-2); }
+    .card-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .card-media .media-fallback {
+      position: absolute; inset: 0; display: grid; place-items: center;
+      color: var(--muted); font-family: var(--serif); font-size: 1.1rem; padding: 16px; text-align: center;
+      background-image:
+        linear-gradient(var(--line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--line) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+    .card-body { padding: 22px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+    .card-meta { display: flex; justify-content: space-between; gap: 12px; font-size: .88rem; color: var(--muted); }
+    .card-body p { margin: 0; color: var(--muted); }
+    .card-links { display: flex; gap: 18px; margin-top: auto; padding-top: 6px; }
+    .card-links a { display: inline-flex; gap: 6px; align-items: center; font-weight: 500; font-size: .95rem; }
+    .card-links a[href=""] { display: none; }
+
+    /* ---------- Citation list (publications) ---------- */
+    .citations { list-style: none; margin: 0; padding: 0; }
+    .citations > li { padding: 20px 0; border-bottom: 1px solid var(--line); }
+    .citations > li:first-child { padding-top: 0; }
+    .cite-title { font-family: var(--serif); font-size: 1.2rem; font-weight: 500; }
+    .cite-meta { color: var(--muted); font-size: .95rem; margin: 4px 0 8px; }
+    .cite-links { display: flex; flex-wrap: wrap; gap: 16px; font-size: .92rem; }
+    .cite-links a[href=""] { display: none; }
+    details.abstract summary { cursor: pointer; color: var(--accent); font-size: .92rem; }
+    details.abstract p { color: var(--muted); margin-top: 8px; }
+
+    /* ---------- Simple rows (certifications, awards, leadership) ---------- */
+    .rows { list-style: none; padding: 0; margin: 0; }
+    .rows > li {
+      display: grid; grid-template-columns: 1fr auto; gap: 2px 16px;
+      padding: 16px 0; border-bottom: 1px solid var(--line);
+    }
+    .rows > li:first-child { padding-top: 0; }
+    .rows .row-title { font-weight: 600; }
+    .rows .row-sub { color: var(--muted); grid-column: 1; font-size: .95rem; }
+    .rows .row-date { color: var(--muted); font-size: .92rem; grid-row: 1; grid-column: 2; white-space: nowrap; }
+    .rows .row-desc { grid-column: 1 / -1; color: var(--muted); font-size: .95rem; margin-top: 4px; }
+    .rows a[href=""] { display: none; }
+    .two-col { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px 56px; }
+    .two-col h3 { margin-bottom: 18px; }
+
+    /* ---------- Resume ---------- */
+    .resume-panel {
+      background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+      padding: clamp(24px, 4vw, 40px);
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px;
+    }
+    .resume-panel p { margin: 0; color: var(--muted); max-width: 52ch; }
+    .resume-note { font-size: .9rem; margin-top: 12px !important; }
+
+    /* ---------- Contact ---------- */
+    .contact-title { font-size: clamp(1.8rem, 3.6vw, 2.6rem); margin-bottom: 12px; }
+    .contact-list { list-style: none; padding: 0; margin: 28px 0 0; display: grid; gap: 14px; }
+    .contact-list li { display: flex; align-items: center; gap: 12px; }
+    .contact-list .icon { color: var(--accent); width: 20px; height: 20px; }
+
+    /* Social icons — empty links are hidden automatically */
+    .social { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; padding: 0; margin: 28px 0 0; }
+    .social a {
+      display: inline-grid; place-items: center; width: 44px; height: 44px;
+      border: 1px solid var(--line); border-radius: 50%; color: var(--ink); background: var(--surface);
+      transition: border-color .2s, color .2s;
+    }
+    .social a:hover { border-color: var(--accent); color: var(--accent); }
+    .social a .icon { width: 20px; height: 20px; }
+    .social li:has(> a[href=""]) { display: none; }
+    .social a[href=""] { display: none; }
+    .hero-meta li:has(> a[href=""]) { display: none; }
+
+    /* ---------- Footer ---------- */
+    .site-footer { border-top: 1px solid var(--line); padding: 32px 0 40px; color: var(--muted); font-size: .9rem; }
+    .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 32px; }
+    .footer-inner p { margin: 0; }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 860px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .portrait { order: -1; justify-self: start; width: min(64%, 240px); }
+      .portrait::before { inset: 10px -10px -10px 10px; }
+      .section-grid { grid-template-columns: 1fr; }
+      .section-head h2, .section-head p { position: static; }
+    }
+    @media (max-width: 520px) {
+      body { font-size: 1rem; }
+      .container { width: min(1120px, 100% - 32px); }
+      .brand-note { display: none; }
+      .btn { flex: 1 1 auto; justify-content: center; }
+      .rows > li { grid-template-columns: 1fr; }
+      .rows .row-date { grid-row: auto; grid-column: 1; }
+      .projects { grid-template-columns: 1fr; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { transition: none !important; animation: none !important; }
+    }
+    @media print {
+      .site-header, .btn-row, .social, .theme-toggle { display: none !important; }
+      .section { border: 0; padding: 24px 0; }
+    }
+  </style>
+</head>
+
+<!-- ═════════════════════════════════════════════════════════════════════
+     PART 2 — HTML (content)
+     ═════════════════════════════════════════════════════════════════════ -->
+<body>
+
+  <!-- Icon library (drawn in code, no downloads needed). You don't need to edit this. -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10.5V17M8 7.2v.1M12 17v-6.5M12 13.5a2.5 2.5 0 0 1 5 0V17"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9a3.4 3.4 0 0 0-.9-2.6c3.1-.4 6.4-1.5 6.4-7A5.4 5.4 0 0 0 20 4.8 5.1 5.1 0 0 0 19.9 1S18.7.7 16 2.5a13.4 13.4 0 0 0-7 0C6.3.7 5.1 1 5.1 1A5.1 5.1 0 0 0 5 4.8a5.4 5.4 0 0 0-1.5 3.8c0 5.4 3.3 6.6 6.4 7A3.4 3.4 0 0 0 9 18.1V22"/></symbol>
+    <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
+    <symbol id="i-scholar" viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></symbol>
+    <symbol id="i-id" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8.5 8v8M12 8h2a4 4 0 0 1 0 8h-2z"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M4 4l16 16M20 4 4 20"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 4 10 15 15 0 0 1-4 10 15 15 0 0 1-4-10 15 15 0 0 1 4-10z"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 7h18M3 12h18M3 17h18"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ===================== HEADER & NAVIGATION ===================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <!-- EDIT: Your name in the top bar -->
+      <a class="brand" href="#home">
+        <span class="brand-name">Imam M. Bukharey</span>
+        <span class="brand-note">Personal Website | Pacific States University</span>
+      </a>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <!-- Menu links. Hidden sections are removed from this menu automatically. -->
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button class="icon-btn theme-toggle" type="button" aria-label="Switch to dark theme">
+        <svg class="icon sun" aria-hidden="true"><use href="#i-moon"/></svg>
+        <svg class="icon moon" aria-hidden="true"><use href="#i-sun"/></svg>
+      </button>
+      <button class="icon-btn menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+        <svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ===================== HERO ===================== -->
+    <section id="home" class="hero" aria-labelledby="hero-name">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="hero-kicker">Hello, I'm</p>
+          <!-- EDIT: Your full name -->
+          <h1 id="hero-name">Imam Muhammad Bukharey</h1>
+          <!-- EDIT: Your one-line headline -->
+          <p class="hero-headline">Business Statistics Student | Technology Enthusiast | Future Professional</p>
+          <!-- EDIT: 2–3 sentence introduction -->
+          <p class="hero-intro">I'm a BBA Business Statistics student at Pacific States University in Los Angeles. [Write one or two sentences about what you focus on and the kind of opportunities you're looking for, e.g. internships in data analysis or business analytics.]</p>
+
+          <!-- EDIT: Contact details. Leave href="" on any link to hide it. -->
+          <ul class="hero-meta">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Inglewood, CA</li>
+            <li><a href="mailto:imambukharey01@gmail.com"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg> imambukharey01@gmail.com</a></li>
+            <!-- EDIT: LinkedIn — paste your profile URL between the quotes -->
+            <li><a href=""><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg> LinkedIn</a></li>
+            <li><a href="https://github.com/IMDB5524" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> GitHub</a></li>
+          </ul>
+
+          <div class="btn-row">
+            <a class="btn btn-primary" href="#projects">View My Work</a>
+            <!-- EDIT: Resume file location -->
+            <a class="btn btn-secondary resume-link" href="assets/resume.pdf" download>
+              <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg> Download Resume
+            </a>
+          </div>
+        </div>
+
+        <!-- EDIT: Profile photo. Put your photo at assets/profile.jpg.
+             If the file is missing, your initials are shown instead. -->
+        <div class="portrait">
+          <div class="portrait-frame">
+            <div class="portrait-fallback" aria-hidden="true">IB</div>
+            <img src="assets/profile.jpg" alt="Portrait of Imam Muhammad Bukharey" width="360" height="450"
+                 onerror="this.remove()">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section id="about" class="section" aria-labelledby="about-title">
+      <div class="container section-grid">
+        <div class="section-head">
+          <h2 id="about-title">About</h2>
+        </div>
+        <div class="section-body">
+          <!-- EDIT: Short biography -->
+          <p class="lead">Originally from Sylhet, Bangladesh, I now live and study in Los Angeles. [Add a few sentences about who you are, why you chose Business Statistics, and what drives you.]</p>
+
+          <div class="about-facts">
+            <!-- EDIT: Each of these four short paragraphs -->
+            <div>
+              <h3>Academic background</h3>
+              <p>Completed SSC (2018) and HSC (2020) in Bangladesh, then studied marketing at Los Angeles City College before starting a BBA in Business Statistics at Pacific States University.</p>
+            </div>
+            <div>
+              <h3>Career interests</h3>
+              <p>[e.g. Business analytics, market research, financial data analysis.]</p>
+            </div>
+            <div>
+              <h3>Professional goals</h3>
+              <p>[e.g. Gain internship experience in data-driven decision making and build toward an analyst role.]</p>
+            </div>
+            <div>
+              <h3>Personal interests</h3>
+              <p>[e.g. Building small web apps, reading, sports, community work.]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== EDUCATION ===================== -->
+    <section id="education" class="section" aria-labelledby="education-title">
+      <div class="container section-grid">
+        <div class="section-head">
+          <h2 id="education-title">Education</h2>
+        </div>
+        <div class="section-body">
+          <ol class="timeline">
+
+            <!-- ▼▼ EDUCATION ENTRY — copy from here ▼▼ -->
+            <li class="entry">
+              <div class="entry-top">
+                <h3>Bachelor of Business Administration, Business Statistics</h3>
+                <span class="entry-date">2026 – 2030 (expected)</span>
+              </div>
+              <p class="entry-org">Pacific States University <span>Los Angeles, CA</span></p>
+              <!-- EDIT: Optional coursework. Delete this <details> block if you don't need it. -->
+              <details class="coursework">
+                <summary>Relevant coursework</summary>
+                <ul class="badges">
+                  <li>[Course name]</li>
+                  <li>[Course name]</li>
+                  <li>[Course name]</li>
+                </ul>
+              </details>
+            </li>
+            <!-- ▲▲ EDUCATION ENTRY — copy to here ▲▲ -->
+
+            <li class="entry">
+              <div class="entry-top">
+                <h3>Associate Program, Marketing Management</h3>
+                <span class="entry-date">2022 – 2025</span>
+              </div>
+              <p class="entry-org">Los Angeles City College <span>Los Angeles, CA</span></p>
+              <ul>
+                <li>Completed the marketing associate class in 2025.</li>
+              </ul>
+            </li>
+
+            <li class="entry">
+              <div class="entry-top">
+                <h3>Higher Secondary Certificate (HSC)</h3>
+                <span class="entry-date">2020</span>
+              </div>
+              <p class="entry-org">[School / College name] <span>Sylhet, Bangladesh</span></p>
+            </li>
+
+            <li class="entry">
+              <div class="entry-top">
+                <h3>Secondary School Certificate (SSC)</h3>
+                <span class="entry-date">2018</span>
+              </div>
+              <p class="entry-org">[School name] <span>Sylhet, Bangladesh</span></p>
+            </li>
+
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SKILLS ===================== -->
+    <!-- EDIT: Only list skills you can honestly talk about in an interview.
+         The [bracketed] items are examples — replace or delete them. -->
+    <section id="skills" class="section" aria-labelledby="skills-title">
+      <div class="container section-grid">
+        <div class="section-head">
+          <h2 id="skills-title">Skills</h2>
+        </div>
+        <div class="section-body">
+          <div class="skill-groups">
+            <div class="skill-group">
+              <h3>Technical</h3>
+              <div class="skill-cat">
+                <p class="skill-cat-name">Data analytics &amp; statistics</p>
+                <ul class="badges"><li>[Microsoft Excel]</li><li>[Descriptive statistics]</li><li>[Data visualization]</li></ul>
+              </div>
+              <div class="skill-cat">
+                <p class="skill-cat-name">Programming &amp; web</p>
+                <ul class="badges"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>[Python]</li></ul>
+              </div>
+              <div class="skill-cat">
+                <p class="skill-cat-name">Databases &amp; cloud</p>
+                <ul class="badges"><li>Supabase</li><li>GitHub Pages</li><li>[SQL]</li></ul>
+              </div>
+              <div class="skill-cat">
+                <p class="skill-cat-name">Software</p>
+                <ul class="badges"><li>[Microsoft Office]</li><li>[Google Workspace]</li></ul>
+              </div>
+              <!-- Add more categories (Networking, Cybersecurity, AI/ML…) by copying a "skill-cat" block -->
+            </div>
+
+            <div class="skill-group">
+              <h3>Professional</h3>
+              <div class="skill-cat">
+                <p class="skill-cat-name">Business</p>
+                <ul class="badges"><li>Marketing fundamentals</li><li>[Market research]</li></ul>
+              </div>
+              <div class="skill-cat">
+                <p class="skill-cat-name">Working with people</p>
+                <ul class="badges"><li>[Communication]</li><li>[Teamwork]</li><li>[Leadership]</li><li>[Problem solving]</li><li>[Project management]</li></ul>
+              </div>
+              <div class="skill-cat">
+                <p class="skill-cat-name">Languages</p>
+                <ul class="badges"><li>English</li><li>Bengali</li></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROJECTS ===================== -->
+    <section id="projects" class="section" aria-labelledby="projects-title">
+      <div class="container section-grid">
+        <div class="section-head">
+          <h2 id="projects-title">Projects</h2>
+          <p>Selected work with code and live demos.</p>
+        </div>
+        <div class="section-body">
+          <div class="projects">
+
+            <!-- ▼▼ PROJECT CARD — copy from here to add another project ▼▼ -->
+            <article class="card">
+              <div class="card-media">
+                <div class="media-fallback" aria-hidden="true">DailyBudget</div>
+                <!-- EDIT: screenshot at assets/project-1.jpg (optional) -->
+                <img src="assets/project-1.jpg" alt="Screenshot of the DailyBudget app" loading="lazy" onerror="this.remove()">
+              </div>
+              <div class="card-body">
+                <div class="card-meta"><span>[Your role, e.g. Solo developer]</span><span>[Month Year]</span></div>
+                <h3>DailyBudget</h3>
+                <p>A personal budgeting web app built as a single HTML page, hosted on GitHub Pages with a Supabase backend. [Add what it helps users do and one result or feature you're proud of.]</p>
+                <ul class="badges"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Supabase</li></ul>
+                <div class="card-links">
+                  <!-- EDIT: links (leave href="" to hide) -->
+                  <a href="https://github.com/IMDB5524" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> Code</a>
+                  <a href=""><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg> Live demo</a>
+                </div>
+              </div>
+            </article>
+            <!-- ▲▲ PROJECT CARD — copy to here ▲▲ -->
+
+            <article class="card">
+              <div class="card-media">
+                <div class="media-fallback" aria-hidden="true">[Project Title]</div>
+                <img src="assets/project-2.jpg" alt="Screenshot of [Project Title]" loading="lazy" onerror="this.remove()">
+              </div>
+              <div class="card-body">
+                <div class="card-meta"><span>[Your role]</span><span>[Month Year]</span></div>
+                <h3>[Project Title]</h3>
+                <p>[Project Description: the problem, what you built or analyzed, and the outcome.]</p>
+                <ul class="badges"><li>[Tool]</li><li>[Tool]</li></ul>
+                <div class="card-links">
+                  <a href=""><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> Code</a>
+                  <a href=""><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg> Live demo</a>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== EXPERIENCE ===================== -->
+    <section id="experience" class="section" aria-labelledby="experience-title">
+      <div class="container section-grid">
+        <div class="section-head">
+          <h2 id="experience-title">Experience</h2>
+        </div>
+        <div class="section-body">
+          <ol class="timeline">
+
+            <!-- ▼▼ EXPERIENCE ENTRY — copy from here ▼▼ -->
+            <li class="entry">
+              <div class="entry-top">
+                <h3>[Job Title]</h3>
+                <span class="entry-date">[Start] – [End or Present]</span>
+              </div>
+              <p class="entry-org">[Company Name] <span>[City, State]</span></p>
+              <p class="entry-subhead">What I did</p>
+              <ul>
+                <li>[Responsibility, written as an action: "Prepared weekly sales reports for…"]</li>
+              </ul>
+              <p class="entry-subhead">Results</p>
+              <ul>
+                <li>[Achievement with a number if possible: "Cut report preparation time by 30%."]</li>
+              </ul>
+              <ul class="badges" style="margin-top:14px"><li>[Tool used]</li></ul>
+            </li>
+            <!-- ▲▲ EXPERIENCE ENTRY — copy to here ▲▲ -->
+
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== RESEARCH (optional) ===================== -->
+    <!-- This section is HIDDEN. Delete the word "hidden" below to show it. -->
+    <section id="research" class="section" aria-labelledby="research-title" hidden>
+      <div class="container section-grid">
+        <div class="section-head">
+          <h2 id="research-title">Research</h2>
+        </div>
+        <div class="section-body">
+          <p class="lead">[Research interests, e.g. consumer behavior analytics, forecasting.]</p>
+          <ol class="timeline" style="margin-top:28px">
+            <li class="entry">
+              <div class="entry-top">
+                <h3>[Research Project Title]</h3>
+                <span class="entry-date">[Year]</span>
+              </div>
+              <p class="entry-org">[Research Assistant, Professor Name] <span>[Department, University]</span></p>
+              <p class="muted">[What question you studied, your methods, and what you found.]</p>
+              <p><a href="">[Project link]</a></p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PUBLICATIONS (optional) ===================== -->
+    <!-- This section is HIDDEN. Only add real, published work. Delete "hidden" to show it. -->
+    <section id="publications" class="section" aria-labelledby="publications-title" hidden>
+      <div class="container section-grid">
+        <div class="section-head">
+          <h2 id="publications-title">Publications</h2>
+        </div>
+        <div class="section-body">
+          <ol class="citations">
+            <!-- ▼▼ PUBLICATION — copy from here ▼▼ -->
+            <li>
+              <p class="cite-title">[Paper Title]</p>
+              <p class="cite-meta">[Author A], [Author B]. <em>[Journal or Conference Name]</em>, [Year]. DOI: [10.xxxx/xxxxx]</p>
+              <details class="abstract">
+                <summary>Abstract</summary>
+                <p>[Abstract text]</p>
+              </details>
+              <div class="cite-links">
+                <a href="">PDF</a>
+                <a href="">Publisher page</a>
+              </div>
+            </li>
+            <!-- ▲▲ PUBLICATION — copy to here ▲▲ -->
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CERTIFICATIONS & AWARDS ===================== -->
+    <section id="certifications" class="section" aria-labelledby="cert-title">
+      <div class="container section-grid">
+        <div class="section-head">
+          <h2 id="cert-title">Certifications &amp; Awards</h2>
+        </div>
+        <div class="section-body two-col">
+          <div>
+            <h3>Certifications</h3>
+            <ul class="rows">
+              <!-- ▼▼ CERTIFICATION — copy this <li> ▼▼ -->
+              <li>
+                <span class="row-title">[Certification Name]</span>
+                <span class="row-date">[Month Year]</span>
+                <span class="row-sub">[Issuing Organization] <a href="">View credential</a></span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3>Awards &amp; Achievements</h3>
+            <ul class="rows">
+              <!-- ▼▼ AWARD — copy this <li> ▼▼ -->
+              <li>
+                <span class="row-title">[Award Name]</span>
+                <span class="row-date">[Year]</span>
+                <span class="row-sub">[Organization]</span>
+                <span class="row-desc">[One sentence on what it recognized.]</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== VOLUNTEERING & LEADERSHIP (optional) ===================== -->
+    <section id="leadership" class="section" aria-labelledby="leadership-title">
+      <div class="container section-grid">
+        <div class="section-head">
+          <h2 id="leadership-title">Leadership &amp; Volunteering</h2>
+        </div>
+        <div class="section-body">
+          <ul class="rows">
+            <!-- ▼▼ ENTRY — copy this <li> (student orgs, campus activities, community work) ▼▼ -->
+            <li>
+              <span class="row-title">[Role], [Organization]</span>
+              <span class="row-date">[Year – Year]</span>
+              <span class="row-desc">[What you contributed and any result.]</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== RESUME ===================== -->
+    <section id="resume" class="section" aria-labelledby="resume-title">
+      <div class="container section-grid">
+        <div class="section-head">
+          <h2 id="resume-title">Resume</h2>
+        </div>
+        <div class="section-body">
+          <div class="resume-panel">
+            <div>
+              <p>A one-page summary of my education, experience, and skills, ready to save or print.</p>
+              <p class="resume-note muted" hidden>The resume file will be added soon. Please email me for a copy in the meantime.</p>
+            </div>
+            <div class="btn-row">
+              <!-- EDIT: Resume file location (both buttons) -->
+              <a class="btn btn-primary resume-link" href="assets/resume.pdf" download>
+                <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg> Download Resume
+              </a>
+              <a class="btn btn-secondary resume-link" href="assets/resume.pdf" target="_blank" rel="noopener">
+                <svg class="icon" aria-hidden="true"><use href="#i-eye"/></svg> View Resume
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section id="contact" class="section" aria-labelledby="contact-title">
+      <div class="container section-grid">
+        <div class="section-head">
+          <h2>Contact</h2>
+        </div>
+        <div class="section-body">
+          <h3 class="contact-title" id="contact-title">Interested in connecting?</h3>
+          <p class="prose muted">Feel free to reach out regarding internships, employment, research, projects, or collaboration.</p>
+          <div class="btn-row" style="margin-top:20px">
+            <!-- This opens the visitor's email app. No server or form needed. -->
+            <a class="btn btn-primary" href="mailto:imambukharey01@gmail.com?subject=Hello%20from%20your%20website">
+              <svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg> Email me
+            </a>
+          </div>
+
+          <ul class="contact-list">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:imambukharey01@gmail.com">imambukharey01@gmail.com</a></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Inglewood, CA</li>
+            <!-- EDIT: Optional phone. Remove the "hidden" word and fill in the number to show it. -->
+            <li hidden><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><a href="tel:+1XXXXXXXXXX">[(XXX) XXX-XXXX]</a></li>
+          </ul>
+
+          <!-- EDIT: SOCIAL LINKS — paste a URL to show an icon; leave href="" to hide it -->
+          <ul class="social" aria-label="Profiles">
+            <li><a href="" aria-label="LinkedIn" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg></a></li>
+            <li><a href="https://github.com/IMDB5524" aria-label="GitHub" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg></a></li>
+            <li><a href="https://www.facebook.com/imam.bukhary007" aria-label="Facebook" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-facebook"/></svg></a></li>
+            <li><a href="" aria-label="Google Scholar" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-scholar"/></svg></a></li>
+            <li><a href="" aria-label="ORCID" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-id"/></svg></a></li>
+            <li><a href="" aria-label="ResearchGate" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg></a></li>
+            <li><a href="" aria-label="X (Twitter)" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg></a></li>
+            <li><a href="" aria-label="Personal portfolio" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg></a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year">2026</span> Imam Muhammad Bukharey. Personal Website | Pacific States University.</p>
+      <p>This is a personal website and is not operated or endorsed by Pacific States University.</p>
+    </div>
+  </footer>
+
+<!-- ═════════════════════════════════════════════════════════════════════
+     PART 3 — JAVASCRIPT (behavior). You don't need to edit this part.
+     ═════════════════════════════════════════════════════════════════════ -->
+  <script>
+    (function () {
+      'use strict';
+      var root = document.documentElement;
+
+      /* ---- 1. Light / dark theme toggle (remembered with localStorage) ---- */
+      var themeBtn = document.querySelector('.theme-toggle');
+      function updateThemeLabel() {
+        var dark = root.getAttribute('data-theme') === 'dark';
+        themeBtn.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme');
+      }
+      themeBtn.addEventListener('click', function () {
+        var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        try { localStorage.setItem('theme', next); } catch (e) {}
+        updateThemeLabel();
+      });
+      updateThemeLabel();
+
+      /* ---- 2. Mobile menu ---- */
+      var nav = document.getElementById('site-nav');
+      var menuBtn = document.querySelector('.menu-toggle');
+      function setMenu(open) {
+        nav.classList.toggle('open', open);
+        menuBtn.setAttribute('aria-expanded', String(open));
+        menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        menuBtn.querySelector('use').setAttribute('href', open ? '#i-close' : '#i-menu');
+      }
+      menuBtn.addEventListener('click', function () {
+        setMenu(menuBtn.getAttribute('aria-expanded') !== 'true');
+      });
+      nav.addEventListener('click', function (e) {
+        if (e.target.closest('a')) setMenu(false);
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && nav.classList.contains('open')) { setMenu(false); menuBtn.focus(); }
+      });
+
+      /* ---- 3. Hide menu links for sections that are hidden or missing ---- */
+      var links = Array.prototype.slice.call(document.querySelectorAll('.nav-links a'));
+      var sections = [];
+      links.forEach(function (a) {
+        var target = document.querySelector(a.getAttribute('href'));
+        if (!target || target.hidden) {
+          a.parentElement.hidden = true;
+        } else {
+          sections.push({ link: a, el: target });
+        }
+      });
+
+      /* ---- 4. Highlight the menu link for the section on screen ---- */
+      if ('IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            sections.forEach(function (s) {
+              if (s.el === entry.target) s.link.setAttribute('aria-current', 'true');
+              else s.link.removeAttribute('aria-current');
+            });
+          });
+        }, { rootMargin: '-45% 0px -50% 0px' });
+        sections.forEach(function (s) { observer.observe(s.el); });
+      }
+
+      /* ---- 5. Footer year ---- */
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      /* ---- 6. If assets/resume.pdf isn't uploaded yet, show a friendly note ---- */
+      var resumeLink = document.querySelector('.resume-link');
+      if (resumeLink && location.protocol.indexOf('http') === 0 && window.fetch) {
+        fetch(resumeLink.getAttribute('href'), { method: 'HEAD' })
+          .then(function (res) {
+            if (!res.ok) {
+              document.querySelectorAll('.resume-link').forEach(function (a) {
+                a.setAttribute('href', '#contact');
+                a.removeAttribute('download');
+                a.removeAttribute('target');
+              });
+              var note = document.querySelector('.resume-note');
+              if (note) note.hidden = false;
+            }
+          })
+          .catch(function () { /* offline or blocked: leave links as they are */ });
+      }
+    })();
+  </script>
+</body>
+</html>
